@@ -1,0 +1,61 @@
+
+\chapter{Basic Configuration And Show}
+	\section{SSH Login}
+	默认情况下，AsterNOS3.0设备都支持基于串行控制台的登陆和基于SSH的登陆。登陆的默认凭据为admin/asternos。
+	在SSH登陆的情况下，用户可以使用串行控制台配置的管理接口（eth0）IP地址后登陆管理接口（eth0）有关配置管理接口IP地址，请参阅以下部分
+	
+	\begin{paracol}{2}[\subsection*{console login}]
+	\myheader{Examples}
+		\begin{rightcolumn}
+		This is an example of output from the console print:
+			\begin{lstlisting}
+switch login: admin                    
+Password:  asteros            
+Last login: Mon Aug 26 14:45:24 CST 2019 from 192.168.10.162 on pts/1
+Linux 48S-224 4.9.0-9-2-amd64 #1 SMP Debian 4.9.168-1+deb9u3 (2015-12-19) x86_64
+    _          _                _   _   ___   ____  
+   / \    ___ | |_   ___  _ __ | \ | | / _ \ / ___| 
+  / _ \  / __|| __| / _ \| '__||  \| || | | |\___ \ 
+ / ___ \ \__ \| |_ |  __/| |   | |\  || |_| | ___) |
+/_/   \_\|___/ \__| \___||_|   |_| \_| \___/ |____/ 
+
+------- Asterfusion Network Operating System -------
+Help:    http://www.asterfusion.com/
+admin@switch:~$                                                                   
+			\end{lstlisting}
+		\end{rightcolumn}
+	\end{paracol}
+	
+	
+	\section{Configuring Management Interface}
+	AsterNOS3.0的管理接口（eth0）默认可以通过DHCP客户端来从DHCP服务端获取IP。
+	将管理接口与相同网段具有DHCP服务器的网络相连接。获取的IP地址可以通过linux命令“/sbin/ifconfig eth0”或者“sudo ifconfig eth0”
+	
+
+
+	\begin{paracol}{2}[\subsection*{ifconfig}]
+	\begin{rightcolumn}
+	使用\textbf{ifconfig}来配置管理网口的IP
+
+		\hfill\begin{minipage}{\linewidth-2em}
+		\hangindent 2em
+		\textbf{sudo ifconfig} [\textsl{mgmt-interface}] [\textsl{ip-address}]
+		\end{minipage}	
+	\end{rightcolumn}
+	
+	\myheader{Syntax Description}
+		\begin{rightcolumn}
+			\begin{tabularx}{\linewidth}{@{}>{\itshape}lX@{}}
+				\toprule
+				mgmt-interface & longer description text that can also use up more than one line\\
+				\midrule
+				ip-address & another description\\
+				\bottomrule
+			\end{tabularx}
+		\end{rightcolumn}
+	
+	\myheader{Command Modes}
+	\myheader{Command History}
+	\myheader{Usage Guidelines}
+	
+	\end{paracol}
